@@ -84,7 +84,7 @@ jobs:
         if: always()
         run: |
           7z a \
-            -p"${{ secrets.PASSWORD }}" \
+            -p"${{ secrets.ZIPASS }}" \
             -mhe=on \
             artifacts_${{ steps.timestamp.outputs.date }}.7z \
             recording.webm *.png 2>/dev/null || true
