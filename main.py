@@ -65,6 +65,10 @@ async def main():
             logging.info('Waiting for dashboard to load...')
             await page.wait_for_selector('a[href^="/xapanel/xvps/server/detail?id="]', timeout=30000)
 
+            if await page.locator('#campaignModalForFreeUsers').is_visible():
+                logging.info('Closing popup ads...')
+                await page.locator('.modal__close').first.click(no_wait_after=True)
+
             logging.info('Navigating server details...')
             await page.locator('a[href^="/xapanel/xvps/server/detail?id="]').first.click(no_wait_after=True)
             
