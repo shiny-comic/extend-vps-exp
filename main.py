@@ -1,6 +1,7 @@
 import asyncio
 import os
 import sys
+import time
 import logging
 import aiohttp
 from urllib.parse import urlparse
@@ -105,6 +106,8 @@ async def main():
             input_loc = page.locator('[placeholder="上の画像の数字を入力"]')
             await input_loc.focus()
             await input_loc.press_sequentially(code, delay=100)
+
+            time.sleep(5)
             
             try:
                 # Use playwright-captcha library to handle the Turnstile challenge
