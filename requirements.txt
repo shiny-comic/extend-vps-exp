@@ -1,4 +1,4 @@
 camoufox[geoip]
 aiohttp
-playwright-captcha==0.1.1
+playwright-captcha==0.1.5
 playwright==1.59.0
