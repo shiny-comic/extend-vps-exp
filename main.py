@@ -1,7 +1,6 @@
 import asyncio
 import os
 import sys
-import time
 import logging
 import aiohttp
 from urllib.parse import urlparse
@@ -107,7 +106,7 @@ async def main():
             await input_loc.focus()
             await input_loc.press_sequentially(code, delay=100)
 
-            time.sleep(5)
+            await asyncio.sleep(5)
             
             try:
                 # Use playwright-captcha library to handle the Turnstile challenge
